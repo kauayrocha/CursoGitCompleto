@@ -1,0 +1,88 @@
+-- configurações globais --
+
+git config --global user.name "alan.rocha"
+git config --global user.email "kauayoliveira@gmail.com"
+
+
+-- criar um repositorio git --
+
+navegar até a pasta que deseja criar o repositorio e utilizar o seguinte comando ( git init )
+
+
+-- rastreando um arquivo --
+
+Adicionando um arquivo no modo de rastreamento do Git, lembrando que tem que esta dentro da pasta do arquivo.
+
+git add "nomme do arquivo"
+
+-- rastreando todos os arquivos da pasta, só depois desse comando que o commit funciona --
+
+git add --all
+
+
+-- commit dos arquivos da pasta --
+
+git commit -m "Nome do versionamento"
+
+-- comando para verificar o status dos arquivos --
+
+git status
+
+
+-- comando para verificar o log efetuado naquele respositorio, ou seja quantas alteracoes --
+
+git log
+
+ou o comando abaixo que tras mais informacoes 
+
+git log --stat
+
+-- comando verificar quais foram as alteracoes realizadas, (e necessario pegar o codigo id do commit apresentado no git log -- 
+para ser feito as comparacoes
+
+git diff (codigo id 1) (codigo id 2)
+
+-- checando outro commits para verificr os arquivos alterados --
+
+git checkout (id do commit)
+
+#quando esse comando é efetuado, você não consegue mais visualizar os outros commits efetuados antes do commit escolhido
+#caso deseje voltar ao commit mais atual novamente você precisa usar o seguinte comando: 
+
+git checkout master
+
+
+
+-- efetuando o checkout de todos os arquivos que foram alterados mas não foi dado commit ainda e nem mapeados para serem commitados,
+este commando só funciona para arquivos que não estão sendo rastreados pelo repositorio ainda  --
+
+git reset --hard (volta para a versão original do ultimo commit todos os arquivos modificados.
+
+
+-- como remover os arquivos que foram inclusos sem querer e que ainda não estão sendo rastreados METODO 1 --
+
+1º usar o comando ( git clean -n ) este comando verifica os arquivos e mostra quais não são rastreados e quais iriam ser excluidos.
+2º usar o comando (git clean -f) este comando remove os arquivos que foram apresentados no 1º comando.
+
+
+
+-- como remover os arquivos que foram inclusos sem querer e que ainda não estão sendo rastreados METODO 2 --
+
+1º usar o comando ( git clean -i ) este comando vai abrir uma tela de gerenciamento para você poder utilizar e analisar
+
+
+-- efetuar a configuração para ignorar tipos de arquivos no git --
+
+criar o arquivo  .gitignore. e por dentro do arquivo o *.extensao
+
+
+-- tirar o projeto do rastreamento --
+
+git rm -r cached.
+
+
+
+== CLONE ==
+
+git clone "caminho do repositorio"
+
